@@ -20,6 +20,11 @@ app.get('/', function(request, response) {
 app.post('/push', function(request, response) {
   var sns = new AWS.SNS();
 
+  console.log('================================================');
+  console.log('New request:');
+  console.log(request.body);
+  console.log('================================================');
+
   var endpoints = request.body.endpoints.map(function(endpoint) {
     return endpoint.replace(/\s/, '');
   });
