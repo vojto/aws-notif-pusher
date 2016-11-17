@@ -3,7 +3,9 @@ var bodyParser = require('body-parser');
 var AWS = require('aws-sdk');
 var async = require('async');
 
-AWS.config.update({ region:'eu-central-1' });
+AWS.config.region = 'eu-central-1';
+AWS.config.accessKeyId = process.env.S3_KEY
+AWS.config.secretAccessKey = process.env.S3_SECRET
 
 var app = express();
 
