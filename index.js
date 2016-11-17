@@ -38,6 +38,8 @@ app.post('/push', function(request, response) {
     return response.send('missing argument body');
   }
 
+  console.log('Sending request to ' + endpoints.length + ' endpoints.');
+
   async.each(endpoints, function(endpoint, next) {
     var message = {};
 
